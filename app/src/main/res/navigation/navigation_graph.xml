@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/kaydedilenSifreler">
+
+    <fragment
+        android:id="@+id/kaydedilenSifreler"
+        android:name="com.mustafayigitkarakoca.sifreuretmeuygulamasi.KaydedilenSifreler"
+        android:label="fragment_kaydedilen_sifreler"
+        tools:layout="@layout/fragment_kaydedilen_sifreler" >
+        <action
+            android:id="@+id/action_kaydedilenSifreler_to_sifreUretmeFragment"
+            app:destination="@id/sifreUretmeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sifreUretmeFragment"
+        android:name="com.mustafayigitkarakoca.sifreuretmeuygulamasi.SifreUretmeFragment"
+        android:label="fragment_sifre_uretme"
+        tools:layout="@layout/fragment_sifre_uretme" >
+        <action
+            android:id="@+id/action_sifreUretmeFragment_to_kaydedilenSifreler"
+            app:destination="@id/kaydedilenSifreler" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

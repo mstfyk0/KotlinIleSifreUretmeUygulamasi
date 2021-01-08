@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SifreUretmeFragment">
+
+        <EditText
+            android:id="@+id/editTextSifreUzunlugu"
+            android:layout_width="231dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="20dp"
+            android:hint="Şifre uzunluk"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/butonSifreUret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:onClick="SifreUret"
+            android:text="Şifre Üret"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSifreUzunlugu" />
+
+        <TextView
+            android:id="@+id/textViewOlusturulanSifre"
+            android:layout_width="392dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="28dp"
+            android:hint="Şifreniz burada gözükecektir"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:onClick="kopyala"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/butonSifreUret" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/editTextSifreNereninSifresi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="ŞİFREYİ KAYDETMEDEN ÖNCE NERENİN ŞİFRESİ OLDUĞUNU YAZINIZ"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black" />
+
+            <Button
+                android:id="@+id/butonKaydet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="sifreKaydet"
+                android:text="ŞİFRE KAYDETMEK İÇİN TIKLA" />
+            <Button
+                android:id="@+id/butonUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="GÜNCELLE"
+                android:onClick="update"
+                android:layout_margin="5dp"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
